@@ -1,0 +1,29 @@
+{
+  "name": "vdub-dev-captcha-handler",
+  "version": "1.0.0",
+  "description": "A lightweight PHP library to generate and handle custom CAPTCHAs.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint:js": "./node_modules/.bin/eslint assets/js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vincentDubresson/captcha-handler.git"
+  },
+  "keywords": [
+    "captcha",
+    "custom",
+    "handler"
+  ],
+  "author": "Vincent Dubresson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vincentDubresson/captcha-handler/issues"
+  },
+  "homepage": "https://github.com/vincentDubresson/captcha-handler#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.33.0",
+    "eslint": "^9.33.0",
+    "globals": "^16.3.0"
+  }
+}

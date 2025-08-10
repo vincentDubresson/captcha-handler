@@ -4,3 +4,4 @@
 executeCiTasks.sh
 
 /vendor/
+/node_modules/
