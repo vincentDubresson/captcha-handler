@@ -4,7 +4,8 @@
   "description": "A lightweight PHP library to generate and handle custom CAPTCHAs.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "eslint:js": "./node_modules/.bin/eslint assets/js"
+    "eslint:js": "./node_modules/.bin/eslint assets/js",
+    "stylelint": "./node_modules/.bin/stylelint assets/styles --allow-empty-input"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   "devDependencies": {
     "@eslint/js": "^9.33.0",
     "eslint": "^9.33.0",
-    "globals": "^16.3.0"
+    "globals": "^16.3.0",
+    "stylelint": "^16.23.1"
   }
 }
