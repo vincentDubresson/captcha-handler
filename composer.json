@@ -1,0 +1,19 @@
+{
+    "name": "vdub-dev/captcha-handler",
+    "description": "A lightweight PHP library to generate and handle custom CAPTCHAs.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "VdubDev\\CaptchaHandler\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Vincent Dubresson",
+            "email": "vincent.dubresson@orange.fr"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
