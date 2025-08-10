@@ -17,6 +17,7 @@
     "minimum-stability": "stable",
     "require-dev": {
         "phpstan/phpstan": "^2.1",
-        "friendsofphp/php-cs-fixer": "^3.85"
+        "friendsofphp/php-cs-fixer": "^3.85",
+        "friendsoftwig/twigcs": "^6.5"
     }
 }
