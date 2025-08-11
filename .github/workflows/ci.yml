@@ -45,6 +45,9 @@ jobs:
       - name: PHP Magic Numbers Detector
         run: vendor/bin/phpmnd src
 
+      - name: PHPUnit Tests
+        run: vendor/bin/phpunit --colors=always --testdox tests/
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
