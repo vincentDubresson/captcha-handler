@@ -1,0 +1,8 @@
+<?php
+
+use App\TwigCs\CustomRuleset;
+
+return \FriendsOfTwig\Twigcs\Config\Config::create()
+    ->setName('my-config')
+    ->setRuleSet(CustomRuleset::class)
+;

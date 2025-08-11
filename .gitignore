@@ -1,0 +1,7 @@
+.idea
+.vscode
+
+executeCiTasks.sh
+
+/vendor/
+/node_modules/
