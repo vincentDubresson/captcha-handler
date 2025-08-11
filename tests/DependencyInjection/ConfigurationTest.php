@@ -14,8 +14,8 @@ public function testDefaultValues()
         // Passer un tableau avec un élément vide pour déclencher les valeurs par défaut
         $config = $processor->processConfiguration($configuration, [[]]);
 
-        $this->assertSame('assets/images/default-captcha-picture.png', $config['default_image']['image_path']);
-        $this->assertSame('assets/images/default-puzzle-picture.png', $config['default_image']['puzzle_path']);
+        $this->assertSame('assets/images/default-captcha-picture.png', $config['assets']['image_path']);
+        $this->assertSame('assets/images/default-puzzle-picture.png', $config['assets']['puzzle_path']);
         $this->assertSame(350, $config['dimensions']['image_width']);
         $this->assertSame(200, $config['dimensions']['image_height']);
         $this->assertSame(80, $config['dimensions']['puzzle_width']);
@@ -29,7 +29,7 @@ public function testDefaultValues()
 
         $customConfig = [
             [
-                'default_image' => [
+                'assets' => [
                     'image_path' => 'custom/image.png',
                     'puzzle_path' => 'custom/puzzle.png',
                 ],
@@ -44,8 +44,8 @@ public function testDefaultValues()
 
         $config = $processor->processConfiguration($configuration, $customConfig);
 
-        $this->assertSame('custom/image.png', $config['default_image']['image_path']);
-        $this->assertSame('custom/puzzle.png', $config['default_image']['puzzle_path']);
+        $this->assertSame('custom/image.png', $config['assets']['image_path']);
+        $this->assertSame('custom/puzzle.png', $config['assets']['puzzle_path']);
         $this->assertSame(500, $config['dimensions']['image_width']);
         $this->assertSame(300, $config['dimensions']['image_height']);
         $this->assertSame(100, $config['dimensions']['puzzle_width']);

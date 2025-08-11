@@ -17,7 +17,7 @@ class Configuration implements ConfigurationInterface
         $children = $rootNode->children();
 
         /** @var \Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition $defaultImageNode */
-        $defaultImageNode = $children->arrayNode('default_image');
+        $defaultImageNode = $children->arrayNode('assets');
         $defaultImageNode->addDefaultsIfNotSet();
 
         $defaultImageChildren = $defaultImageNode->children();

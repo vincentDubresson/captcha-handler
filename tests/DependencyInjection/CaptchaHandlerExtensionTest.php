@@ -12,7 +12,7 @@ class CaptchaHandlerExtensionTest extends TestCase
         $extension = new CaptchaHandlerExtension();
 
         $config = [[
-            'default_image' => [
+            'assets' => [
                 'image_path' => 'test/image.png',
                 'puzzle_path' => 'test/puzzle.png',
             ],
@@ -26,8 +26,8 @@ class CaptchaHandlerExtensionTest extends TestCase
 
         $extension->load($config, $container);
 
-        $this->assertSame('test/image.png', $container->getParameter('captcha_handler.default_image.image_path'));
-        $this->assertSame('test/puzzle.png', $container->getParameter('captcha_handler.default_image.puzzle_path'));
+        $this->assertSame('test/image.png', $container->getParameter('captcha_handler.assets.image_path'));
+        $this->assertSame('test/puzzle.png', $container->getParameter('captcha_handler.assets.puzzle_path'));
         $this->assertSame(400, $container->getParameter('captcha_handler.dimensions.image_width'));
         $this->assertSame(250, $container->getParameter('captcha_handler.dimensions.image_height'));
         $this->assertSame(90, $container->getParameter('captcha_handler.dimensions.puzzle_width'));

@@ -12,8 +12,8 @@ class CaptchaHandlerExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $container->setParameter('captcha_handler.default_image.image_path', $config['default_image']['image_path']);
-        $container->setParameter('captcha_handler.default_image.puzzle_path', $config['default_image']['puzzle_path']);
+        $container->setParameter('captcha_handler.assets.image_path', $config['assets']['image_path']);
+        $container->setParameter('captcha_handler.assets.puzzle_path', $config['assets']['puzzle_path']);
 
         $container->setParameter('captcha_handler.dimensions.image_width', $config['dimensions']['image_width']);
         $container->setParameter('captcha_handler.dimensions.image_height', $config['dimensions']['image_height']);

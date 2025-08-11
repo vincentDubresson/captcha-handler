@@ -1,5 +1,5 @@
 captcha_handler:
-  default_image:
+  assets:
     image_path: 'assets/images/default-captcha-picture.png'
     puzzle_path: 'assets/images/default-puzzle-picture.png'
   dimensions:
