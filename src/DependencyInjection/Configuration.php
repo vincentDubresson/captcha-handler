@@ -34,6 +34,7 @@ class Configuration implements ConfigurationInterface
         $dimensionsChildren->integerNode('image_height')->defaultValue(200)->end();
         $dimensionsChildren->integerNode('puzzle_width')->defaultValue(80)->end();
         $dimensionsChildren->integerNode('puzzle_height')->defaultValue(50)->end();
+        $dimensionsChildren->integerNode('precision')->defaultValue(3)->end();
         $dimensionsChildren->end();
         $dimensionsNode->end();
 

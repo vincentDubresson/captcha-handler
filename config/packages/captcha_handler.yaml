@@ -7,3 +7,4 @@ captcha_handler:
     image_height: 200
     puzzle_width: 80
     puzzle_height: 50
+    precision: 3

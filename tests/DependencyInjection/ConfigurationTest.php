@@ -20,6 +20,7 @@ public function testDefaultValues()
         $this->assertSame(200, $config['dimensions']['image_height']);
         $this->assertSame(80, $config['dimensions']['puzzle_width']);
         $this->assertSame(50, $config['dimensions']['puzzle_height']);
+        $this->assertSame(3, $config['dimensions']['precision']);
     }
 
     public function testCustomValues()
@@ -38,6 +39,7 @@ public function testDefaultValues()
                     'image_height' => 300,
                     'puzzle_width' => 100,
                     'puzzle_height' => 70,
+                    'precision' => 10,
                 ],
             ],
         ];
@@ -50,5 +52,6 @@ public function testDefaultValues()
         $this->assertSame(300, $config['dimensions']['image_height']);
         $this->assertSame(100, $config['dimensions']['puzzle_width']);
         $this->assertSame(70, $config['dimensions']['puzzle_height']);
+        $this->assertSame(10, $config['dimensions']['precision']);
     }
 }

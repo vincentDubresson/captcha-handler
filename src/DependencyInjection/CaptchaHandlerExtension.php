@@ -19,5 +19,7 @@ class CaptchaHandlerExtension extends Extension
         $container->setParameter('captcha_handler.dimensions.image_height', $config['dimensions']['image_height']);
         $container->setParameter('captcha_handler.dimensions.puzzle_width', $config['dimensions']['puzzle_width']);
         $container->setParameter('captcha_handler.dimensions.puzzle_height', $config['dimensions']['puzzle_height']);
+        $container->setParameter('captcha_handler.dimensions.precision', $config['dimensions']['precision']);
+
     }
 }

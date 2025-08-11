@@ -21,6 +21,7 @@ class CaptchaHandlerExtensionTest extends TestCase
                 'image_height' => 250,
                 'puzzle_width' => 90,
                 'puzzle_height' => 60,
+                'precision' => 10,
             ],
         ]];
 
@@ -32,5 +33,6 @@ class CaptchaHandlerExtensionTest extends TestCase
         $this->assertSame(250, $container->getParameter('captcha_handler.dimensions.image_height'));
         $this->assertSame(90, $container->getParameter('captcha_handler.dimensions.puzzle_width'));
         $this->assertSame(60, $container->getParameter('captcha_handler.dimensions.puzzle_height'));
+        $this->assertSame(10, $container->getParameter('captcha_handler.dimensions.precision'));
     }
 }
