@@ -4,7 +4,7 @@ namespace VdubDev\CaptchaHandler\Domain\AntiSpam;
 
 use Symfony\Component\HttpFoundation\Response;
 
-interface ChallengeGenerator
+interface ChallengeGeneratorInterface
 {
     public function generate(string $key): Response;
 }
