@@ -14,19 +14,16 @@ class Configuration implements ConfigurationInterface
         /** @var \Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition $rootNode */
         $rootNode = $treeBuilder->getRootNode();
 
-        $children = $rootNode->children();
-
-        /** @var \Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition $defaultImageNode */
-        $defaultImageNode = $children->arrayNode('assets');
+        // Assets
+        $defaultImageNode = $rootNode->children()->arrayNode('assets');
         $defaultImageNode->addDefaultsIfNotSet();
 
         $defaultImageChildren = $defaultImageNode->children();
-        $defaultImageChildren->scalarNode('image_path')->defaultValue('assets/images/default-captcha-picture.png')->end();
-        $defaultImageChildren->scalarNode('puzzle_path')->defaultValue('assets/images/default-puzzle-picture.png')->end();
-        $defaultImageChildren->end();
-        $defaultImageNode->end();
+        $defaultImageChildren->scalarNode('prefix_image_path')->defaultValue('%kernel.project_dir%/public/bundles/captchahandler/images/default-captcha-picture-')->end();
+        $defaultImageChildren->scalarNode('puzzle_path')->defaultValue('%kernel.project_dir%/public/bundles/captchahandler/images/default-puzzle-picture.png')->end();
 
-        $dimensionsNode = $children->arrayNode('dimensions');
+        // Dimensions
+        $dimensionsNode = $rootNode->children()->arrayNode('dimensions');
         $dimensionsNode->addDefaultsIfNotSet();
 
         $dimensionsChildren = $dimensionsNode->children();
@@ -34,11 +31,7 @@ class Configuration implements ConfigurationInterface
         $dimensionsChildren->integerNode('image_height')->defaultValue(200)->end();
         $dimensionsChildren->integerNode('puzzle_width')->defaultValue(80)->end();
         $dimensionsChildren->integerNode('puzzle_height')->defaultValue(50)->end();
-        $dimensionsChildren->integerNode('precision')->defaultValue(3)->end();
-        $dimensionsChildren->end();
-        $dimensionsNode->end();
-
-        $children->end();
+        $dimensionsChildren->integerNode('precision')->defaultValue(2)->end();
 
         return $treeBuilder;
     }

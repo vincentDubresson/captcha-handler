@@ -1,6 +1,6 @@
 <?php
 
-namespace App\TwigCs;
+namespace VdubDev\CaptchaHandler\TwigCs;
 
 use FriendsOfTwig\Twigcs\Rule\ForbiddenFunctions;
 use FriendsOfTwig\Twigcs\Rule\LowerCaseVariable;

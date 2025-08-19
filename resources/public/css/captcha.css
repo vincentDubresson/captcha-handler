@@ -1,0 +1,70 @@
+.captcha {
+    position: relative;
+    display: block;
+    border: 2px solid gray;
+    width: var(--width);
+    height: var(--height);
+    background: var(--image);
+    touch-action: none;
+}
+
+.captcha-piece {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: var(--piece-width);
+    height: var(--piece-height);
+    background: var(--image) top right;
+}
+
+.captcha-piece::after {
+    content: '';
+    background: url('/bundles/captchahandler/images/default-puzzle-picture-outline.png') no-repeat;
+    position: absolute;
+    width: calc(var(--piece-width) + 10px);
+    height: calc(var(--piece-height) + 10px);
+    transition: 0.3s;
+}
+
+.captcha:not(.captcha-waiting-interaction) .captcha-piece:not(.is-moving)::after {
+    opacity: 0.3;
+}
+
+.captcha-form-group {
+    position: relative;
+}
+
+.captcha-valid {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: rgb(0 128 0 / 0%);
+    transform: scale(0.98);
+    transition: opacity .3s ease, background-color .3s ease, transform .3s ease;
+}
+
+.captcha-valid::after {
+    content: '';
+    background-image: url('/bundles/captchahandler/images/default-captcha-valid-icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100px;
+    height: 100px;
+    display: block;
+}
+
+.captcha-valid-confirmed {
+    z-index: 2;
+    opacity: 1;
+    background-color: rgb(0 128 0 / 40%);
+    transform: none;
+}
+

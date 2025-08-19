@@ -1,10 +1,10 @@
 captcha_handler:
   assets:
-    image_path: 'assets/images/default-captcha-picture.png'
-    puzzle_path: 'assets/images/default-puzzle-picture.png'
+    prefix_image_path: '%kernel.project_dir%/public/bundles/captchahandler/images/default-captcha-picture-'
+    puzzle_path: '%kernel.project_dir%/public/bundles/captchahandler/images/default-puzzle-picture.png'
   dimensions:
     image_width: 350
     image_height: 200
     puzzle_width: 80
     puzzle_height: 50
-    precision: 3
+    precision: 2

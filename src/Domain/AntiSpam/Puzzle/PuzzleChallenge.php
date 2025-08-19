@@ -10,6 +10,7 @@ use VdubDev\CaptchaHandler\Domain\AntiSpam\ChallengeInterface;
 class PuzzleChallenge implements ChallengeInterface
 {
     private const SESSION_NAME = 'puzzles';
+    private const CAPTCHA_CHECK_ROUTE = 'captcha_check';
     private const REQUIRED_SOLUTION_PARTS = 2;
 
     public function __construct(
@@ -57,7 +58,9 @@ class PuzzleChallenge implements ChallengeInterface
          */
         $puzzles = $session->get(self::SESSION_NAME);
 
-        $session->set(self::SESSION_NAME, array_filter($puzzles, fn (array $puzzle) => $puzzle['key'] !== $key));
+        if (!$this->isCaptchaCheckRoute()) {
+            $session->set(self::SESSION_NAME, array_filter($puzzles, fn (array $puzzle) => $puzzle['key'] !== $key));
+        }
 
         return (abs($expected[0] - $got[0]) <= $this->precision) && (abs($expected[1] - $got[1]) <= $this->precision);
     }
@@ -116,5 +119,13 @@ class PuzzleChallenge implements ChallengeInterface
     private function generatePuzzleKey(): string
     {
         return rtrim(strtr(base64_encode(random_bytes(16)), '+/', '-_'), '=');
+    }
+
+    private function isCaptchaCheckRoute(): bool
+    {
+        /** @var Request $request */
+        $request = $this->requestStack->getCurrentRequest();
+
+        return $request->attributes->get('_route') == self::CAPTCHA_CHECK_ROUTE;
     }
 }
