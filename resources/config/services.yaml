@@ -1,0 +1,24 @@
+services:
+    VdubDev\CaptchaHandler\Domain\AntiSpam\Puzzle\PuzzleChallenge:
+        autowire: true
+        arguments:
+            $imageWidth: '%captcha_handler.dimensions.image_width%'
+            $imageHeight: '%captcha_handler.dimensions.image_height%'
+            $puzzleWidth: '%captcha_handler.dimensions.puzzle_width%'
+            $puzzleHeight: '%captcha_handler.dimensions.puzzle_height%'
+            $precision: '%captcha_handler.dimensions.precision%'
+
+    VdubDev\CaptchaHandler\Domain\AntiSpam\Puzzle\ChallengeGenerator:
+        autowire: true
+        arguments:
+            $prefixImagePath: '%captcha_handler.assets.prefix_image_path%'
+            $puzzlePath: '%captcha_handler.assets.puzzle_path%'
+            $pieceWidth: '%captcha_handler.dimensions.puzzle_width%'
+
+    VdubDev\CaptchaHandler\Form\Type\CaptchaType:
+        autowire: true
+        arguments:
+          $imageWidth: '%captcha_handler.dimensions.image_width%'
+          $imageHeight: '%captcha_handler.dimensions.image_height%'
+          $puzzleWidth: '%captcha_handler.dimensions.puzzle_width%'
+          $puzzleHeight: '%captcha_handler.dimensions.puzzle_height%'
