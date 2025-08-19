@@ -40,7 +40,7 @@ jobs:
         run: vendor/bin/php-cs-fixer fix --using-cache=no -vvv --diff --ansi --dry-run
 
       - name: Twig CS Lint
-        run: vendor/bin/twigcs resources/views --ansi
+        run: vendor/bin/twigcs Resources/views --ansi
 
       - name: PHP Magic Numbers Detector
         run: vendor/bin/phpmnd src
