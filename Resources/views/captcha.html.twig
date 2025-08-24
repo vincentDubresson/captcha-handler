@@ -5,4 +5,10 @@
         piece-width="80"
         piece-height="50"
         src="{{ path('captcha', {challenge}) }}"
-></puzzle-captcha>
+>
+    <div class="captcha-valid"></div>
+    <input type="hidden" class="captcha_answer">
+    <input type="hidden" class="captcha_challenge" value="{{ challenge }}">
+</puzzle-captcha>
+
+<script src="{{ asset('bundles/captchahandler/js/captcha.js') }}"></script>
