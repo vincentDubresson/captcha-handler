@@ -22,3 +22,5 @@ services:
           $imageHeight: '%captcha_handler.dimensions.image_height%'
           $puzzleWidth: '%captcha_handler.dimensions.puzzle_width%'
           $puzzleHeight: '%captcha_handler.dimensions.puzzle_height%'
+
+    VdubDev\CaptchaHandler\Domain\AntiSpam\ChallengeInterface: '@VdubDev\CaptchaHandler\Domain\AntiSpam\Puzzle\PuzzleChallenge'

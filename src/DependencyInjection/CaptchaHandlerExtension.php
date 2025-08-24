@@ -2,8 +2,10 @@
 
 namespace VdubDev\CaptchaHandler\DependencyInjection;
 
+use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
+use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 class CaptchaHandlerExtension extends Extension
 {
@@ -21,5 +23,11 @@ class CaptchaHandlerExtension extends Extension
         $container->setParameter('captcha_handler.dimensions.puzzle_height', $config['dimensions']['puzzle_height']);
         $container->setParameter('captcha_handler.dimensions.precision', $config['dimensions']['precision']);
 
+        $loader = new YamlFileLoader(
+            $container,
+            new FileLocator(__DIR__ . '/../../resources/config')
+        );
+
+        $loader->load('services.yaml');
     }
 }
