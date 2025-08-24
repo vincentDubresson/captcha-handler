@@ -4,6 +4,7 @@ namespace VdubDev\CaptchaHandler\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
+use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
 
 class CaptchaHandlerExtension extends Extension
 {
@@ -21,5 +22,12 @@ class CaptchaHandlerExtension extends Extension
         $container->setParameter('captcha_handler.dimensions.puzzle_height', $config['dimensions']['puzzle_height']);
         $container->setParameter('captcha_handler.dimensions.precision', $config['dimensions']['precision']);
 
+    }
+
+    public function configureRoutes(RoutingConfigurator $routes): void
+    {
+        $routes->import(__DIR__ . '/../Controller/', 'attribute')
+            ->prefix('/')
+        ;
     }
 }
