@@ -121,10 +121,12 @@ import '/bundles/captchahandler/js/captcha.js';
 
 ### With AND Without AssetMapper
 
-If you don’t use a build tool, include the assets directly in your Twig templates:
+Include the CSS assets directly in your Twig templates:
 
 ```twig
-{# base.html.twig #}
+{# example.html.twig #}
+
+{% extends 'base.html.twig' %}
 
 {% block stylesheets %}
     {{ parent() }}
