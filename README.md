@@ -93,7 +93,7 @@ Depending on your setup, you can include them in two ways:
 
 ---
 
-### 🔹 Option 1: With Webpack Encore or AssetMapper
+### 🔹 Option 1: With AssetMapper
 
 After running:
 
@@ -108,26 +108,6 @@ public/bundles/captchahandler/css/captcha.css
 public/bundles/captchahandler/js/captcha.js
 ```
 
-#### Webpack Encore (`assets/app.js` and `assets/app.css`)
-
-```js
-// assets/app.js
-import '../public/bundles/captchahandler/js/captcha.js';
-```
-
-```css
-/* assets/app.css */
-@import '../public/bundles/captchahandler/css/captcha.css';
-```
-
-Rebuild your assets:
-
-```bash
-yarn dev
-# or
-npm run dev
-```
-
 #### AssetMapper (Symfony 6.3+)
 
 Reference the bundle's files directly in your `app.js` / `app.css`.  
@@ -138,14 +118,9 @@ Example:
 import '/bundles/captchahandler/js/captcha.js';
 ```
 
-```css
-/* assets/app.css */
-@import '/bundles/captchahandler/css/captcha.css';
-```
-
 ---
 
-### 🔹 Option 2: Without Encore / AssetMapper
+### With AND Without AssetMapper
 
 If you don’t use a build tool, include the assets directly in your Twig templates:
 
@@ -159,14 +134,12 @@ If you don’t use a build tool, include the assets directly in your Twig templa
 
 {% block javascripts %}
     {{ parent() }}
-    <script src="{{ asset('bundles/captchahandler/js/captcha.js') }}"></script>
 {% endblock %}
 ```
 
 This will load the assets directly from the `public/` directory.
 
 ---
-
 
 
 ## 🔑 Backend Integration

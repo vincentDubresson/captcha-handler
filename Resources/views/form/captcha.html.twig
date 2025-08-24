@@ -1,6 +1,5 @@
 {% block captcha_row %}
     <div class="captcha-form-group">
-        <div class="captcha-valid"></div>
         <puzzle-captcha
                 width="{{ attr.width }}"
                 height="{{ attr.height }}"
@@ -10,6 +9,7 @@
         >
             {{ form_widget(form.challenge, {value: challenge}) }}
             {{ form_widget(form.answer) }}
+            <div class="captcha-valid"></div>
         </puzzle-captcha>
         {{ form_help(form) }}
         {{ form_errors(form) }}
