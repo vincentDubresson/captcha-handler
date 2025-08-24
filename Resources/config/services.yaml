@@ -1,4 +1,6 @@
 services:
+    VdubDev\CaptchaHandler\Domain\AntiSpam\ChallengeInterface: '@VdubDev\CaptchaHandler\Domain\AntiSpam\Puzzle\PuzzleChallenge'
+
     VdubDev\CaptchaHandler\Domain\AntiSpam\Puzzle\PuzzleChallenge:
         autowire: true
         arguments:
@@ -15,17 +17,20 @@ services:
             $puzzlePath: '%captcha_handler.assets.puzzle_path%'
             $pieceWidth: '%captcha_handler.dimensions.puzzle_width%'
 
-    VdubDev\CaptchaHandler\Form\Type\CaptchaType:
-        autowire: true
-        arguments:
-          $imageWidth: '%captcha_handler.dimensions.image_width%'
-          $imageHeight: '%captcha_handler.dimensions.image_height%'
-          $puzzleWidth: '%captcha_handler.dimensions.puzzle_width%'
-          $puzzleHeight: '%captcha_handler.dimensions.puzzle_height%'
-
-    VdubDev\CaptchaHandler\Domain\AntiSpam\ChallengeInterface: '@VdubDev\CaptchaHandler\Domain\AntiSpam\Puzzle\PuzzleChallenge'
-
     VdubDev\CaptchaHandler\Controller\CaptchaController:
       public: true
       autowire: true
       autoconfigure: true
+
+    VdubDev\CaptchaHandler\Form\Type\CaptchaType:
+      autowire: true
+      autoconfigure: true
+      tags:
+        - { name: form.type }
+      arguments:
+        $challenge: '@VdubDev\CaptchaHandler\Domain\AntiSpam\ChallengeInterface'
+        $urlGenerator: '@router'
+        $imageWidth: '%captcha_handler.dimensions.image_width%'
+        $imageHeight: '%captcha_handler.dimensions.image_height%'
+        $puzzleWidth: '%captcha_handler.dimensions.puzzle_width%'
+        $puzzleHeight: '%captcha_handler.dimensions.puzzle_height%'
