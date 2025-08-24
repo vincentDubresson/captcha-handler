@@ -1,8 +1,0 @@
-<?php
-
-use VdubDev\CaptchaHandler\TwigCs\CustomRuleset;
-
-return \FriendsOfTwig\Twigcs\Config\Config::create()
-    ->setName('my-config')
-    ->setRuleSet(CustomRuleset::class)
-;
