@@ -13,7 +13,6 @@ Add the following lines to your `composer.json`:
 
 ```json
 {
-  "minimum-stability": "dev",
   "repositories": [
     {
       "type": "git",
