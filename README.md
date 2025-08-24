@@ -32,6 +32,20 @@ Then run:
 composer update vdub-dev/captcha-handler:^1.0
 ```
 
+Create a file `config/routes/captcha_handler.yaml` :
+
+```yaml
+captcha_handler:
+  resource: '../../vendor/vdub-dev/captcha-handler/Resources/config/routing/captcha.php'
+  type: php
+```
+
+then run:
+
+```bash
+php bin/console c:cl
+```
+
 ---
 
 ## 📂 Assets

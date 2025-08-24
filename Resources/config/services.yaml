@@ -24,3 +24,8 @@ services:
           $puzzleHeight: '%captcha_handler.dimensions.puzzle_height%'
 
     VdubDev\CaptchaHandler\Domain\AntiSpam\ChallengeInterface: '@VdubDev\CaptchaHandler\Domain\AntiSpam\Puzzle\PuzzleChallenge'
+
+    VdubDev\CaptchaHandler\Controller\CaptchaController:
+      public: true
+      autowire: true
+      autoconfigure: true
