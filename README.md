@@ -110,7 +110,7 @@ public/bundles/captchahandler/js/captcha.js
 
 #### AssetMapper (Symfony 6.3+)
 
-Reference the bundle's files directly in your `app.js` / `app.css`.  
+Reference the bundle's files directly in your `app.js`.  
 Example:
 
 ```js
