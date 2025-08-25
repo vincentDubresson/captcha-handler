@@ -223,4 +223,10 @@ class ExampleController
 ### ⚖️ Which option to choose?
 
 - **Form integration** → recommended if your captcha is part of an existing Symfony form (login, registration, contact form…).
-- **Controller integration** → useful if you need more control or want to render the captcha outside of a form.  
+- **Controller integration** → useful if you need more control or want to render the captcha outside of a form.
+
+---
+
+## Acknowledgements
+
+Inspiration for this package comes from a video by **Grafikart** – you can watch it [here](https://grafikart.fr/tutoriels/captcha-puzzle-2216).
